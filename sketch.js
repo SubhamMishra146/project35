@@ -3,18 +3,18 @@ var database;
 var food1;
 
 function preload(){
-dogimg = loadImage("images/Dog.png");
-dogHappy = loadImage("images/happydog.png");
+dogimg = loadImage("Dog.png");
+dogHappy = loadImage("happydog.png");
 
 }
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(700, 500);
   
   
-  dog = createSprite(400,500,50,50);
+  dog = createSprite(200,200,50,50);
   dog.addImage(dogimg);
-  dog.scale = 0.3;
+  dog.scale = 0.2;
 
   database = firebase.database();
   
@@ -34,13 +34,12 @@ function draw() {
     dog.addImage(dogHappy);
   }
 
-  if (keyIsUp(UP_ARROW)){
-    dog.addImage(dogimg);
-  }
+  
 
   drawSprites();
 
-  textSize(30);
+  textSize(20);
+  fill("white");
   text("food remaining: "+foods,300,250);
   text("press the up arrow key to feed the dog",250,150);
   
